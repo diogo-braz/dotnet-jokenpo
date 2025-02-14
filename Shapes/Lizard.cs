@@ -1,0 +1,9 @@
+namespace Jokenpo.Shapes;
+
+sealed class Lizard : Shape
+{
+    public static readonly Lizard Instance = new ();
+    private Lizard() { }
+    public override string Name => nameof(Lizard);
+    protected override IReadOnlySet<Shape> Beats => new HashSet<Shape> { Spock.Instance, Paper.Instance };
+}
